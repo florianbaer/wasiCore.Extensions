@@ -9,9 +9,13 @@ namespace wasiCore.Extensions
     {
 
 
-        public static FileStream Create(string path)
+        public static FileStream Create(string path, int? bufferSize = null, FileOptions? options = null)
         {
             DirectoryExtension.Create(path);
+            if (options != null && bufferSize != null)
+                return File.Create(path, (int) bufferSize, (FileOptions) options);
+            if (bufferSize != null)
+                return File.Create(path, (int) bufferSize);
             return File.Create(path);
         }
 
@@ -41,11 +45,19 @@ namespace wasiCore.Extensions
         }
 
 
-        public static void Copy(string sourceFileName, string destFileName, bool overwrite = false)
+        public static bool Copy(string sourceFileName, string destFileName, bool overwrite = false)
         {
-            if (!File.Exists(sourceFileName)) return;
+            if (!File.Exists(sourceFileName)) return false;
             DirectoryExtension.Create(destFileName);
-            File.Copy(sourceFileName, destFileName, overwrite);
+            try
+            {
+                File.Copy(sourceFileName, destFileName, overwrite);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
 

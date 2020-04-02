@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>0.0.2</Version>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Version>0.0.3</Version>
     <Authors>Thomas Waser</Authors>
     <Company>wasizug</Company>
     <PackageLicenseFile>licence.txt</PackageLicenseFile>
@@ -12,7 +12,7 @@
     <PackageTags>Extensions string</PackageTags>
     <Description>Extensions for incomplete methods.
 
-Test</Description>
+string: Trim, Left, Right, Substring</Description>
     <Copyright />
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
   </PropertyGroup>

@@ -1,4 +1,4 @@
-# wasiCore.{packageName}
+# wasiCore.Extensions
 
 This is a nuget package written in c# standard.
 

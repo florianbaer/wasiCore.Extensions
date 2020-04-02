@@ -9,10 +9,10 @@ namespace wasiCore.Extensions
 
 
         /// <summary>
-        /// Tries to convert a string to a number. If it fails, the return value is -1, or the value specified in the optional parameter "errorValue".
+        /// Converts the specified string representation of a number to an equivalent 32-bit signed integer. If it fails, -1 (or another number if the parameter errorValue is set) will be returned.
         /// </summary>
         /// <param name="str"></param>
-        /// <param name="errorValue">Optional: Returned if it fails.</param>
+        /// <param name="errorValue">Optional: Returns the value if the string cannot be converted.</param>
         /// <returns></returns>
         public static int ToInt(this string str, int errorValue = -1)
         {
@@ -22,7 +22,7 @@ namespace wasiCore.Extensions
 
 
         /// <summary>
-        /// Convert a string to a nullable number. If it fails, the return value is null.
+        /// Converts the specified string representation of a number to an equivalent nullable integer. If it fails, (null) will be returned.
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>

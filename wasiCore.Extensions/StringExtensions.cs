@@ -8,9 +8,9 @@ namespace wasiCore.Extensions
 
 
         /// <summary>
-        /// Like string.Trim() but trims unwanted characters between char (0) and char (32). Spaces, tabs, line breaks, and the like.
+        /// Returns a new string in which all leading and trailing occurrences of a set of unwanted characters (between char 0 and 32) from the current string are removed
         /// </summary>
-        /// <param name="str"></param>
+        /// <param name="str">String: The string that remains after all unwanted characters are removed from the start and end of the current string. If no characters can be trimmed from the current instance, the method returns the current instance unchanged.</param>
         /// <returns></returns>
         public static string TrimExtended(this string str)
         {
@@ -29,7 +29,7 @@ namespace wasiCore.Extensions
 
 
         /// <summary>
-        /// Exactly the same as string.Substring(Int32)
+        /// Retrieves a substring from this instance. The substring starts at a specified character position and continues to the end of the string.
         /// </summary>
         /// <param name="str"></param>
         /// <param name="startIndex"></param>
@@ -41,7 +41,7 @@ namespace wasiCore.Extensions
 
 
         /// <summary>
-        /// Like string.Substring(Int32, Int32) but without errors if the string is shorter than the length to be displayed.
+        /// Retrieves a substring from this instance. The substring starts at a specified character position and has a specified length.
         /// </summary>
         /// <param name="str"></param>
         /// <param name="startIndex"></param>
@@ -54,7 +54,7 @@ namespace wasiCore.Extensions
 
 
         /// <summary>
-        /// Identical to LEFT () in T-SQL
+        /// Retrieves a substring from this instance. The substring starts at the first position and has a specified length.
         /// </summary>
         /// <param name="str"></param>
         /// <param name="length"></param>
@@ -66,13 +66,15 @@ namespace wasiCore.Extensions
 
 
         /// <summary>
-        /// Identical to LEFT () in T-SQL
+        /// Retrieves a substring from this instance. The substring starts at a specified character position and continues to the end of the string.
         /// </summary>
         /// <param name="str"></param>
         /// <param name="length"></param>
         /// <returns></returns>
         public static string Right(this string str, int length)
         {
+            if (length > str.Length)
+                length = str.Length;
             return str.SubstringExtended(str.Length - length >= 0 ? str.Length - length : str.Length, str.Length);
         }
 

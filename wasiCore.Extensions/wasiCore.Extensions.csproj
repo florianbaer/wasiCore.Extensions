@@ -2,17 +2,18 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <Version>0.0.3</Version>
+    <Version>0.0.5</Version>
     <Authors>Thomas Waser</Authors>
     <Company>wasizug</Company>
     <PackageLicenseFile>licence.txt</PackageLicenseFile>
-    <PackageProjectUrl>https://github.com/wasizug/wasiCore.Extensions</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/wasizug/wasiCore.Extensions</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/wasizug/wasiCore.Extensions/wiki</PackageProjectUrl>
+    <RepositoryUrl></RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageTags>Extensions string</PackageTags>
+    <PackageTags>Extensions string numbers numeric date datetime list enumerable</PackageTags>
     <Description>Extensions for incomplete methods.
 
-string: Trim, Left, Right, Substring</Description>
+string: Trim, Left, Right, Substring
+int: ToInt, ToIntNullable</Description>
     <Copyright />
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
   </PropertyGroup>

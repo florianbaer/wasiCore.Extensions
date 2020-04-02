@@ -61,6 +61,8 @@ namespace wasiCore.Extensions
         /// <returns></returns>
         public static string Left(this string str, int length)
         {
+            if (length < 0)
+                length = 0;
             return str.SubstringExtended(0, length);
         }
 
@@ -75,6 +77,8 @@ namespace wasiCore.Extensions
         {
             if (length > str.Length)
                 length = str.Length;
+            if (length < 0)
+                length = 0;
             return str.SubstringExtended(str.Length - length >= 0 ? str.Length - length : str.Length, str.Length);
         }
 
